@@ -22,4 +22,12 @@ fun todoTask4(collection: Collection<Int>): Nothing = TODO(
     documentation = doc4(),
     references = { JavaCode4().task4(collection) })
 
-fun task4(collection: Collection<Int>): Boolean = todoTask4(collection)
+fun task4(collection: Collection<Int>): Boolean {
+    val even = {x: Int -> x % 2 == 0}
+
+    var hasEvenNumber = false
+
+    collection.forEach { if (even(it)) hasEvenNumber = true }
+
+    return hasEvenNumber
+}
